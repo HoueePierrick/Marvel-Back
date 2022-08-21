@@ -42,10 +42,12 @@ router.post('/create', async(req, res) => {
                             hash: hash,
                             token: token,
                         }
-                        )
+                    );
+                    
                     await newUser.save();
+                    
                     res.status(200).json("Account created successfully");
-    
+
                 } else {
                     let response = [];
                     if(!Countries(country)) {
@@ -59,7 +61,6 @@ router.post('/create', async(req, res) => {
         
             } else {
                 let missingfields = [];
-                // firstname && lastname && emailaddress && password && birthdate && country
                 if(!firstname) {
                     missingfields.push("First name")
                 }
@@ -88,5 +89,3 @@ router.post('/create', async(req, res) => {
 })
 
 module.exports = router;
-
-// create errror for already existing emails

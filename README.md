@@ -4,7 +4,7 @@ This back-end interacts with:
 - **MongoDB** to stock users accounts and each user's favorites characters and comics
 - **Marvel's front-end** which is deployed on Netlify
 
-This back-end is currently deployed on Heroku
+This back-end is currently deployed on Heroku: https://reacteur-marvel-back.herokuapp.com
 
 ## It contains the following routes
 Each route has it's one description on its page, it can be found from Index.js, which contains them all
