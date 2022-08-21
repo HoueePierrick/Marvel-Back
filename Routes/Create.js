@@ -20,8 +20,8 @@ router.post('/create', async(req, res) => {
     try {
         const {firstname, lastname, emailaddress, password, birthdate, specialoffers, newsletter, country} = req.fields;
         const ExistUser = await User.find({emailaddress: emailaddress});
-        if(ExistUser) {
-            res.status(400).json({message: "There is already a user registered with this email"})
+        if(ExistUser.length > 0) {
+            res.status(400).json({message: "There is already a user registered with this email"});
         } else {
             if(firstname && lastname && emailaddress && password && birthdate && country) {
                 const salt = uid2(16);
