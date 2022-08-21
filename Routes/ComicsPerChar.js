@@ -1,4 +1,4 @@
-// Route allowing to retrieve comics associated with a character
+// Route allowing to retrieve comics associated with a character = get route
 // Also can accept as request : order ("inverted to inverse letters"), letter (to filter titles by first letter)
 // Input is the charactedID in params
 // Expected output is an object containing

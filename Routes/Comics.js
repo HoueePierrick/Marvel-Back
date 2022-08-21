@@ -1,4 +1,4 @@
-// Route allowing to retrieve comics
+// Route allowing to retrieve comics = get route
     // Expects as request (optional) : page (which is converted into skip), limit (max number of comics per page) and search (which is converted into title)
     // Also can accept as request : order ("inverted to inverse letters"), letter (to filter titles by first letter)
     // Returns an object containing :
