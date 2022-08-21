@@ -18,13 +18,13 @@ router.get('/login', async(req, res) => {
         const {logemail, logpassword} = req.fields;
         if(logemail && logpassword) {
             const LoggedUser = await User.find({emailaddress: logemail});
-            const {firstname, lastname, emailaddress, birthdate, specialoffers, newsletter, country, salt, hash, token} = LoggedUser[0];
-            const loghash = SHA256(logpassword + salt).toString(encBase64);
-            if(loghash === hash) {
-                res.status(200).json({firstname, lastname, emailaddress, birthdate, country, token})
+            if(!LoggedUser) {
+                res.status(400).json({message: "There aren't registered users with this email"})
             } else {
-                if(!LoggedUser) {
-                    res.status(400).json({message: "There aren't registered users with this email"})
+                const {firstname, lastname, emailaddress, birthdate, specialoffers, newsletter, country, salt, hash, token} = LoggedUser[0];
+                const loghash = SHA256(logpassword + salt).toString(encBase64);
+                if(loghash === hash) {
+                    res.status(200).json({firstname, lastname, emailaddress, birthdate, country, token})
                 } else {
                     res.status(400).json({message: "The password that you've entered is incorrect"})
                 }
