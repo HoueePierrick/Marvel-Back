@@ -27,9 +27,8 @@ router.get("/comics/:characterID", async(req, res) => {
         let APIKey = process.env.API_KEY;
         let CharID = req.params.characterID;
         let query = `https://lereacteur-marvel-api.herokuapp.com/comics/${CharID}?apiKey=${APIKey}`;
-        console.log(req.fields.order, req.fields.letter)
         await axios.get(query)
-            .then((response) => res.status(200).json(ComicSorter(response.data, req.fields.order, req.fields.letter, "per char")))
+            .then((response) => res.status(200).json(ComicSorter(response.data, req.query.order, req.query.letter, "per char")))
             .catch(error => {res.status(404).json(error.response)})
     } catch (error) {
         res.status(400).json(error.message)
