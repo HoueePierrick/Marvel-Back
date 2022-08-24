@@ -18,7 +18,7 @@ router.get('/login', async(req, res) => {
         const {logemail, logpassword} = req.query;
         if(logemail && logpassword) {
             const LoggedUser = await User.find({emailaddress: logemail});
-            if(!LoggedUser) {
+            if(LoggedUser.length === 0) {
                 res.status(400).json({message: "There aren't registered users with this email"})
             } else {
                 const {firstname, lastname, emailaddress, birthdate, specialoffers, newsletter, country, salt, hash, token} = LoggedUser[0];
