@@ -15,7 +15,7 @@ const encBase64 = require("crypto-js/enc-base64");
 
 router.get('/login', async(req, res) => {
     try {
-        const {logemail, logpassword} = req.fields;
+        const {logemail, logpassword} = req.query;
         if(logemail && logpassword) {
             const LoggedUser = await User.find({emailaddress: logemail});
             if(!LoggedUser) {
