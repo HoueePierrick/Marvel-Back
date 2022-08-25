@@ -45,8 +45,7 @@ router.post('/create', async(req, res) => {
                     );
                     
                     await newUser.save();
-                    
-                    res.status(200).json("Account created successfully");
+                    res.status(200).json({firstname, lastname, emailaddress, birthdate, country, token})
 
                 } else {
                     let response = [];
