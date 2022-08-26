@@ -4,13 +4,10 @@ const router = express.Router();
 // Import of the FavChars model
 const FavChar = require("../../Models/FavChars");
 
-// Import of axios
-const axios = require("axios");
-
 // Route to see all characters in favorites
 // Input is the user email
 // Returns an array containing all the favorite characters associated to the account
-router.get("favorite/characters/see", async(req, res) => {
+router.get("/favorite/characters/see", async(req, res) => {
     try {
         const {email} = req.query;
         const AllFavChar = await FavChar.find({account_email: account_email});
