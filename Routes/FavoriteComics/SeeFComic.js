@@ -7,7 +7,7 @@ const FavComic = require("../../Models/FavComics");
 // Route to see all characters in favorites
 // Input is the user email
 // Returns an array containing all the favorite comics associated to the account
-router.get("/favorite/characters/see", async(req, res) => {
+router.get("/favorite/comics/see", async(req, res) => {
     try {
         const {email} = req.query;
         const AllFavCom = await FavComic.find({account_email: account_email});

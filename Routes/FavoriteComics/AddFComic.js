@@ -8,7 +8,7 @@ const FavComic = require("../../Models/FavComics");
 // Route to add comics in favorites
 // Inputs are type, content, account_email
 // Returns an array containing all the favorite comics associated to the account
-router.post("/favorite/characters/add", async(req, res) => {
+router.post("/favorite/comics/add", async(req, res) => {
     try {
         const {type, content, account_email} = req.fields;
         const NewFavCom = new FavComic(

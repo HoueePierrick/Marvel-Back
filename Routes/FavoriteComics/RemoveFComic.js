@@ -7,7 +7,7 @@ const FavComic = require("../../Models/FavComics");
 // Route to remove comics in favorites
 // Inputs are type, content, account_email
 // Returns an array containing all the favorite comics associated to the account
-router.post("/favorite/characters/remove", async(req, res) => {
+router.post("/favorite/comics/remove", async(req, res) => {
     try {
         const {type, content, account_email} = req.fields;
         await FavComic.deleteOne({"content._id": content._id});
