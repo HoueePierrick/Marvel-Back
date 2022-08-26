@@ -12,7 +12,7 @@ const FavChars = mongoose.model('FavChar', {
             path: String,
         },
         __v: Number,
-        __id: String,
+        _id: String,
     },
     account_email: String
 })
