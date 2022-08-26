@@ -52,8 +52,16 @@ const SeeFavorChars = require('./Routes/FavoriteCharacters/SeeFChar');
 app.use(SeeFavorChars);
 
 // Route to add comics in favorites
-const FavorComics = require('./Routes/FavorComics');
-app.use(FavorComics);
+const AddFavorCom = require('./Routes/FavoriteComics/AddFComic');
+app.use(AddFavorCom);
+
+// Route to remove comics in favorites
+const RemoveFavorCom = require('./Routes/FavoriteComics/RemoveFComic');
+app.use(RemoveFavorCom);
+
+// Route to see comics in favorites
+const SeeFavorCom = require('./Routes/FavoriteComics/SeeFComic');
+app.use(SeeFavorCom);
 
 // Catch all other routes
 app.all("*", (req, res) => {
