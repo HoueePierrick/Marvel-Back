@@ -13,7 +13,6 @@ const FavComics = mongoose.model('FavComic', {
         __v: Number,
         __id: String,
     },
-    account_token: String,
     account_email: String
 })
 

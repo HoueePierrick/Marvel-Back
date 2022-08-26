@@ -14,7 +14,6 @@ const FavChars = mongoose.model('FavChar', {
         __v: Number,
         __id: String,
     },
-    account_token: String,
     account_email: String
 })
 
