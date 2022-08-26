@@ -10,7 +10,7 @@ const FavChar = require("../../Models/FavChars");
 router.post("/favorite/characters/remove", async(req, res) => {
     try {
         const {type, content, account_email} = req.fields;
-        await FavChar.deleteOne(req.fields);
+        await FavChar.deleteOne({"content._id": content._id});
         const AllFavChar = await FavChar.find({account_email: account_email});
         res.status(200).json({AllFavChar})
     } catch (error) {
