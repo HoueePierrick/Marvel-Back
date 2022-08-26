@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Import of the FavChars model
+// Import of the FavComics model
 const FavComic = require("../../Models/FavComics");
 
 // Route to add comics in favorites
@@ -18,7 +18,7 @@ router.post("/favorite/comics/add", async(req, res) => {
                 account_email: account_email
             });
         await NewFavCom.save();
-        const AllFavCom = await FavChar.find({account_email: account_email})
+        const AllFavCom = await FavComic.find({account_email: account_email})
         res.status(200).json({AllFavCom})
     } catch (error) {
         res.status(400).json(error.message)

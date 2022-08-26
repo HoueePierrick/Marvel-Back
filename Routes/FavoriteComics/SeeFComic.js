@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-// Import of the FavChars model
+// Import of the FavComics model
 const FavComic = require("../../Models/FavComics");
 
-// Route to see all characters in favorites
+// Route to see all comics in favorites
 // Input is the user email
 // Returns an array containing all the favorite comics associated to the account
 router.get("/favorite/comics/see", async(req, res) => {
