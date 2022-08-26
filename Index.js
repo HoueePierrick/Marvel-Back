@@ -40,16 +40,16 @@ const Login = require('./Routes/Login');
 app.use(Login);
 
 // Route to add characters in favorites
-const FavorChars = require('./Routes/Favorite Characters/AddFChar');
-app.use(FavorChars);
+const AddFavorChars = require('./Routes/Favorite Characters/AddFChar');
+app.use(AddFavorChars);
 
 // Route to remove characters in favorites
-const FavorChars = require('./Routes/Favorite Characters/RemoveFChar');
-app.use(FavorChars);
+const RemoveFavorChars = require('./Routes/Favorite Characters/RemoveFChar');
+app.use(RemoveFavorChars);
 
 // Route to see characters in favorites
-const FavorChars = require('./Routes/Favorite Characters/SeeFChar');
-app.use(FavorChars);
+const SeeFavorChars = require('./Routes/Favorite Characters/SeeFChar');
+app.use(SeeFavorChars);
 
 // Route to add comics in favorites
 const FavorComics = require('./Routes/FavorComics');
